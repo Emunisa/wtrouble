@@ -6,7 +6,7 @@
 function rollAttributes() {
 	characters();
 	equipment();
-	event();
+	events();
 	limit();
 	materia();
 }
@@ -116,7 +116,7 @@ function rolleq3() {
 	}
 }
 
-function event() {
+function events() {
 	const event = [
 	'Breed Gold Chocobo', 'Beat Emerald', 'Beat Ruby', 'Complete Ancient Forest', 'Beat Ultima', 'Defeat Raps (Wutai)', 'Finish Pagoda (Wutai)', 'Finish Mogs House', 'Achieve S Rank Chocobo'
 	];
@@ -143,6 +143,9 @@ function materia() {
 	const materia = [
 	'Magic', 'Command', 'Summon', 'Support', 'Independent'
 	];
+	const materiaimage = [
+	'FFVII_Magic_Materia_Icon.PNG', 'FFVII_Command_Materia_Icon.PNG', 'FFVII_Summon_Materia_Icon.PNG', 'FFVII_Support_Materia_Icon.PNG', 'FFVII_Independent_Materia_Icon.PNG', 
+	]
 	
 	var mat1 = Math.floor(Math.random() * materia.length);
 	var mat2 = Math.floor(Math.random() * materia.length);
@@ -151,7 +154,7 @@ function materia() {
 		mat2 = Math.floor(Math.random() * materia.length);
 	}
 	
-	document.getElementById("MateriaResult").innerHTML = materia[mat1] + ", " + materia[mat2];
+	document.getElementById("MateriaResult").innerHTML = "<img src=assets/" + materiaimage[mat1] + "> " + materia[mat1] + ", <img src=assets/" + materiaimage[mat2] + "> " + materia[mat2];
 }
 </script>
 <style>
@@ -241,7 +244,7 @@ footer {
 	<td id="eqRes3"></td>
 </tr>
 <tr>
-	<td class="cat">Event</td>
+	<td class="cat">Event <button type="button" onclick="events()">Reroll</button></td>
 	<td colspan = 3 id="EventResult">
 </tr>
 <tr>
@@ -263,11 +266,12 @@ footer {
 	<br />
 	The randomization options will:</p>
 	<ol class="faqlist">
-		<li>Specify what optional characters you are required to use. Yuffie and Vincent (if required) must be recruited at their earliest available opportunity. If Aerith is rolled, a replacement character is indicated to be used after CD1.</li>
+		<li>Specify what optional characters you are required to use. Yuffie and Vincent (if required) must be recruited at their earliest available opportunity. If Aerith is rolled, a replacement character is indicated to be used after CD1. <br />
+		In the case when a character forces himself into the party or becomes unavailable, the player can choose their replacement freely but characters aside Cloud and the W-Trouble characters cannot use any materia or limits.</li>
 		<br />
 		<li>Specify what equipment can be changed per character. By default, randomization options will roll the same equipment for each character. You can optionally select to roll for character's equipment independently by selecting the checkbox on the page and using the <i>Roll Eq</i> option associated to each character.</li>
 		<br />
-		<li>Specify two optional events that you must complete during your playthrough.</li>
+		<li>Specify two optional events that are recommended to be completed during your playthrough.</li>
 		<br />
 		<li>Specify a specific limit tier that must be used by the party. You can use other limits only to earn the required limit tier. If a limit tier is rolled that is inaccessible for a particular character, then they simply do not get to use limits. <br /><span id="csdice">Sorry Cait Sith, no dice!</span></li>
 		<br />
