@@ -179,12 +179,33 @@ function materia() {
   src: url(assets/font/Final_Fantasy_VII.ttf);
 }
 
-table, th, td {
-	border: 1px solid black;
+th, td {
+  background: #04009d;
+  background: -moz-linear-gradient(top,  #04009d 0%, #06004d 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#04009d), color-stop(100%,#06004d));
+  background: -webkit-linear-gradient(top,  #04009d 0%,#06004d 100%);
+  background: -o-linear-gradient(top,  #04009d 0%,#06004d 100%);
+  background: -ms-linear-gradient(top,  #04009d 0%,#06004d 100%);
+  background: linear-gradient(to bottom,  #04009d 0%,#06004d 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#04009d', endColorstr='#06004d',GradientType=0 );
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
 }
 
 table {
 	width: 70%;
+	padding: 0px;
+	color: #ffffff;
+	text-shadow: 2px 2px #212421,1px 1px #212021;
+ 	font-family: Verdana, sans-serif;
+  	font-size: 20px;
+  	font-weight: normal;
+ 	margin: 5px 0;
+	background-color: #FFFFFF;
+    box-shadow: 1px 1px #e7dfe7, -1px -1px #e7dfe7, 1px -1px #e7dfe7, -1px 1px #e7dfe7, 0 -2px #9c9a9c, -2px 0 #7b757b, 0 2px #424542;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
 }
 
 th, td {
@@ -200,7 +221,7 @@ td {
 }
 
 .faq {
-width: 70%;
+	width: 70%;
 }
 
 .faq p, .faq ol, .faq li {
@@ -212,10 +233,23 @@ width: 70%;
 	font-size: 18px;
 }
 
+a {
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+
 body {
-	font-family: Arial;
-	font-size: 20px;
-	background-color: #EEFFEE;
+	font-family: Verdana, sans-serif;
+	color: #FFFFFF;
+	/*background-color: #323232;
+	background-color: #42069F;*/
+	background: -moz-linear-gradient(top,  #04009d 0%, #06004d 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#04009d), color-stop(100%,#06004d));
+	background: -webkit-linear-gradient(top,  #04009d 0%,#06004d 100%);
+	background: -o-linear-gradient(top,  #04009d 0%,#06004d 100%);
+	background: -ms-linear-gradient(top,  #04009d 0%,#06004d 100%);
+	background: linear-gradient(to bottom,  #04009d 0%,#06004d 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#04009d', endColorstr='#06004d',GradientType=0 );
 }
 
 th {
@@ -241,7 +275,7 @@ img {
 </head>
 <body>
 <center>
-	<h1>This page is used to roll properties of the FF7 W-Trouble Challenge</h1>
+	<h1>Welcome to the FF7 W-Trouble Challenge!</h1>
 <input type="checkbox" id="indpEq">Do you want to roll equipment independently?</input>
 <br />
 <br />
@@ -306,7 +340,7 @@ img {
 </div>
 </center>
 <footer>
-Website hosted by dkeka#0504 and maintained by Emunisa#7777
+Website hosted by dkeka#0504 and maintained by Emunisa#7777 - CSS by Doom#8955
 </footer>
 </body>
 </html>
