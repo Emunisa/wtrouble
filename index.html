@@ -169,8 +169,17 @@ function materia() {
 	while (mat1 == mat2) {
 		mat2 = Math.floor(Math.random() * materia.length);
 	}
-	
-	document.getElementById("MateriaResult").innerHTML = "<img src=assets/" + materiaimage[mat1] + "> " + materia[mat1] + ", <img src=assets/" + materiaimage[mat2] + "> " + materia[mat2];
+	if (document.getElementById("noitem").checked){
+		var mat3 = Math.floor(Math.random() * materia.length);
+		
+		while (mat3 == mat1 || mat3 == mat2) {
+		mat3 = Math.floor(Math.random() * materia.length);
+		}
+		
+		document.getElementById("MateriaResult").innerHTML = "<img src=assets/" + materiaimage[mat1] + "> " + materia[mat1] + ", <img src=assets/" + materiaimage[mat2] + "> " + materia[mat2] + ", <img src=assets/" + materiaimage[mat3] + "> " + materia[mat3];
+	} else {
+		document.getElementById("MateriaResult").innerHTML = "<img src=assets/" + materiaimage[mat1] + "> " + materia[mat1] + ", <img src=assets/" + materiaimage[mat2] + "> " + materia[mat2];
+	}
 }
 </script>
 <style>
@@ -277,6 +286,8 @@ img {
 <center>
 	<h1>Welcome to the FF7 W-Trouble Challenge!</h1>
 <input type="checkbox" id="indpEq">Do you want to roll equipment independently?</input>
+<br />
+<input type="checkbox" id="noitem">Enable 'No Item' mode (3 materia options rolled)</input>
 <br />
 <br />
 <button type="button" onclick="rollAttributes()">Click me to roll!</button>
