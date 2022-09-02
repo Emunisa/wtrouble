@@ -129,7 +129,7 @@ function rolleq3() {
 
 function events() {
 	const event = [
-	'Breed Gold Chocobo', 'Beat Emerald', 'Beat Ruby', 'Complete Ancient Forest', 'Beat Ultimate', 'Defeat Raps (Wutai)', 'Finish Pagoda (Wutai)', 'Finish Mogs House', 'Achieve S Rank Chocobo', 'Collect all Summon Materia'
+	'Breed Gold Chocobo', 'Beat Emerald', 'Beat Ruby', 'Complete Ancient Forest', 'Beat Ultimate', 'Defeat Raps (Wutai)', 'Finish Pagoda (Wutai)', 'Finish Mogs House', 'Achieve S Rank Chocobo', 'Collect all Summon Materia', 'Beat Gelnika Turks'
 	];
 	
 	var ev1 = Math.floor(Math.random() * event.length);
