@@ -51,6 +51,10 @@ function equipment() {
 	'Weapon', 'Armor', 'Accessory'
 	];
 	
+	const eqimage = [
+	'FFVII_Sword_Icon.PNG', 'FFVII_Armor_Icon.PNG', 'FFVII_Accessory_Icon.PNG'
+	];
+	
 	if (document.getElementById("indpEq").checked){
 	} else {
 		var eq1 = Math.floor(Math.random() * equipment.length);
@@ -58,9 +62,9 @@ function equipment() {
 		while (eq1 == eq2) {
 			eq2 = Math.floor(Math.random() * equipment.length);
 		}
-		document.getElementById("eqRes1").innerHTML = equipment[eq1] + ", " + equipment[eq2];
-		document.getElementById("eqRes2").innerHTML = equipment[eq1] + ", " + equipment[eq2];
-		document.getElementById("eqRes3").innerHTML = equipment[eq1] + ", " + equipment[eq2];
+		document.getElementById("eqRes1").innerHTML = "<img src=assets/" + eqimage[eq1] + "> " + equipment[eq1] + ", <img src=assets/" + eqimage[eq2] + "> "  + equipment[eq2];
+		document.getElementById("eqRes2").innerHTML = "<img src=assets/" + eqimage[eq1] + "> " + equipment[eq1] + ", <img src=assets/" + eqimage[eq2] + "> "  + equipment[eq2];
+		document.getElementById("eqRes3").innerHTML = "<img src=assets/" + eqimage[eq1] + "> " + equipment[eq1] + ", <img src=assets/" + eqimage[eq2] + "> "  + equipment[eq2];
 	}
 
 }
@@ -71,6 +75,10 @@ function rolleq1() {
 		'Weapon', 'Armor', 'Accessory'
 		];
 		
+		const eqimage = [
+		'FFVII_Sword_Icon.PNG', 'FFVII_Armor_Icon.PNG', 'FFVII_Accessory_Icon.PNG'
+		];	
+		
 		var eq1 = Math.floor(Math.random() * equipment.length);
 		var eq2 = Math.floor(Math.random() * equipment.length);
 		
@@ -78,7 +86,7 @@ function rolleq1() {
 		eq2 = Math.floor(Math.random() * equipment.length);
 		}
 		
-		document.getElementById("eqRes1").innerHTML = equipment[eq1] + ", " + equipment[eq2];
+		document.getElementById("eqRes1").innerHTML = "<img src=assets/" + eqimage[eq1] + "> " + equipment[eq1] + ", <img src=assets/" + eqimage[eq2] + "> "  + equipment[eq2];
 	}
 }
 
@@ -88,6 +96,10 @@ function rolleq2() {
 		'Weapon', 'Armor', 'Accessory'
 		];
 		
+		const eqimage = [
+		'FFVII_Sword_Icon.PNG', 'FFVII_Armor_Icon.PNG', 'FFVII_Accessory_Icon.PNG'
+		];	
+		
 		var eq1 = Math.floor(Math.random() * equipment.length);
 		var eq2 = Math.floor(Math.random() * equipment.length);
 		
@@ -95,7 +107,7 @@ function rolleq2() {
 		eq2 = Math.floor(Math.random() * equipment.length);
 		}
 		
-		document.getElementById("eqRes2").innerHTML = equipment[eq1] + ", " + equipment[eq2];
+		document.getElementById("eqRes2").innerHTML = "<img src=assets/" + eqimage[eq1] + "> " + equipment[eq1] + ", <img src=assets/" + eqimage[eq2] + "> "  + equipment[eq2];
 	}
 }
 
@@ -105,6 +117,10 @@ function rolleq3() {
 		'Weapon', 'Armor', 'Accessory'
 		];
 		
+		const eqimage = [
+		'FFVII_Sword_Icon.PNG', 'FFVII_Armor_Icon.PNG', 'FFVII_Accessory_Icon.PNG'
+		];	
+		
 		var eq1 = Math.floor(Math.random() * equipment.length);
 		var eq2 = Math.floor(Math.random() * equipment.length);
 		
@@ -112,7 +128,7 @@ function rolleq3() {
 		eq2 = Math.floor(Math.random() * equipment.length);
 		}
 		
-		document.getElementById("eqRes3").innerHTML = equipment[eq1] + ", " + equipment[eq2];
+		document.getElementById("eqRes3").innerHTML = "<img src=assets/" + eqimage[eq1] + "> " + equipment[eq1] + ", <img src=assets/" + eqimage[eq2] + "> "  + equipment[eq2];
 	}
 }
 
@@ -144,7 +160,7 @@ function materia() {
 	'Magic', 'Command', 'Summon', 'Support', 'Independent'
 	];
 	const materiaimage = [
-	'FFVII_Magic_Materia_Icon.PNG', 'FFVII_Command_Materia_Icon.PNG', 'FFVII_Summon_Materia_Icon.PNG', 'FFVII_Support_Materia_Icon.PNG', 'FFVII_Independent_Materia_Icon.PNG', 
+	'FFVII_Magic_Materia_Icon.PNG', 'FFVII_Command_Materia_Icon.PNG', 'FFVII_Summon_Materia_Icon.PNG', 'FFVII_Support_Materia_Icon.PNG', 'FFVII_Independent_Materia_Icon.PNG' 
 	]
 	
 	var mat1 = Math.floor(Math.random() * materia.length);
@@ -209,6 +225,11 @@ th {
 footer {
 	text-align: center;
 	font-size: 14px;
+}
+
+img {
+	height: 20px;
+	width: 20px;
 }
 
 </style>
