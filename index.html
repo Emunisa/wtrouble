@@ -14,16 +14,17 @@
 <br />
 <br />
 <button type="button" onclick="rollAttributes()">Click me to roll!</button>
+<button type="button" onclick="reset()">Reset</button>
 <br />
 <br />
 
-<table>
+<table id="EntireTable">
 <th colspan = 4>Results</th>
 <tr class="tableheader">
 	<td>Category</td>
-	<td>Character 1 <button type="button" onclick="rolleq1()">Roll Eq</button></td>
-	<td>Character 2 <button type="button" onclick="rolleq2()">Roll Eq</button></td>
-	<td>Character 3 <button type="button" onclick="rolleq3()">Roll Eq</button></td>
+	<td>Character 1 <button type="button" onclick="rolleq(1)">Roll Eq</button></td>
+	<td>Character 2 <button type="button" onclick="rolleq(2)">Roll Eq</button></td>
+	<td>Character 3 <button type="button" onclick="rolleq(3)">Roll Eq</button></td>
 </tr>
 <tr>
 	<td class="cat">Character</td>
@@ -55,7 +56,7 @@
 <div class="faq">
 	<h3>What is W-Trouble?</h3>
 	<p>
-	W-Trouble is an FF7 challenge playthrough inspired by Final Fantasy 5's <a href="https://www.fourjobfiesta.com/">Four Job Fiesta</a> that aims to create a unique repeatable experience using randomized options for an FF7 playthrough. This challenge is designed to be beginner friendly and can be adapted as needed! The goal for this challenge is to beat the game within the boundaries set out by the randomization options. 
+	W-Trouble is an FF7 challenge playthrough inspired by Final Fantasy 5's <a href="https://www.fourjobfiesta.com/">Four Job Fiesta</a> that aims to create a unique repeatable experience using randomized options for an FF7 playthrough. This challenge is designed to be beginner friendly and can be adapted as needed! The goal for this challenge is to beat the game within the boundaries set out by the randomization options.
 	<br />
 	<br />
 	The randomization options will:</p>
