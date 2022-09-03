@@ -153,34 +153,34 @@ function reset() {
 	// maybe we just force a refresh instead?
 	document.getElementById("EntireTable").innerHTML = `
 		<th colspan = 4>Results</th>
-		<tr class="tableheader">
+		<tr class="w3-row-padding">
 			<td>Category</td>
-			<td>Character 1 <button type="button" onclick="rolleq(1)">Roll Eq</button></td>
-			<td>Character 2 <button type="button" onclick="rolleq(2)">Roll Eq</button></td>
-			<td>Character 3 <button type="button" onclick="rolleq(3)">Roll Eq</button></td>
+			<td>Character 1 <button type="button" class="w3-button w3-small w3-padding-small w3-theme-d1" onclick="rolleq(1)">Roll Eq</button></td>
+			<td>Character 2 <button type="button" class="w3-button w3-small w3-padding-small w3-theme-d1" onclick="rolleq(2)">Roll Eq</button></td>
+			<td>Character 3 <button type="button" class="w3-button w3-small w3-padding-small w3-theme-d1" onclick="rolleq(3)">Roll Eq</button></td>
 		</tr>
-		<tr>
-			<td class="cat">Character</td>
+		<tr class="w3-row-padding">
+			<td>Character</td>
 			<td id="charRes1"></td>
 			<td id="charRes2"></td>
 			<td id="charRes3"></td>
 		</tr>
-		<tr>
-			<td class="cat">Equipment</td>
+		<tr class="w3-row-padding">
+			<td>Equipment</td>
 			<td id="eqRes1"></td>
 			<td id="eqRes2"></td>
 			<td id="eqRes3"></td>
 		</tr>
-		<tr>
-			<td class="cat">Materia</td>
+		<tr class="w3-row-padding">
+			<td>Materia</td>
 			<td colspan = 3 id="MateriaResult">
 		</tr>
-		<tr>
-			<td class="cat">Limit Tier</td>
+		<tr class="w3-row-padding">
+			<td>Limit Tier</td>
 			<td colspan = 3 id="LimitResult">
 		</tr>
-		<tr>
-			<td class="cat">Event <button type="button" onclick="events()">Reroll</button></td>
+		<tr class="w3-row-padding">
+			<td class="cat">Event <button type="button" class="w3-button w3-small w3-padding-small w3-theme-d1" onclick="events()">Reroll</button></td>
 			<td colspan = 3 id="EventResult">
 		</tr>`;
 }
