@@ -100,6 +100,7 @@ function events() {
 	}
 
 	document.getElementById("EventResult").innerHTML = event[ev1] + ", " + event[ev2];
+	save();
 }
 
 function limit() {
