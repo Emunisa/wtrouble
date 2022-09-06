@@ -8,12 +8,12 @@
 <body>
 <center>
 <h1>Welcome to the FF7 W-Trouble Challenge!</h1>
-<input type="checkbox" id="indpEq">Do you want to roll equipment independently?</input>
+<input type="checkbox" id="indpEq" onclick="save()">Do you want to roll equipment independently?</input>
 <br />
-<input type="checkbox" id="noitem">Enable 'No Item' mode (3 materia options rolled)</input>
+<input type="checkbox" id="noitem" onclick="save()">Enable 'No Item' mode (3 materia options rolled)</input>
 <br />
 <br />
-<button type="button" onclick="rollAttributes()">Click me to roll!</button>
+<button type="button" onclick="rollAttributes(); save()">Click me to roll!</button>
 <button type="button" onclick="reset()">Reset</button>
 <br />
 <br />
@@ -22,9 +22,9 @@
 <th colspan = 4>Results</th>
 <tr class="tableheader">
 	<td>Category</td>
-	<td>Character 1 <button type="button" onclick="rolleq(1)">Roll Eq</button></td>
-	<td>Character 2 <button type="button" onclick="rolleq(2)">Roll Eq</button></td>
-	<td>Character 3 <button type="button" onclick="rolleq(3)">Roll Eq</button></td>
+	<td>Character 1 <button type="button" onclick="rolleq(1); save()">Roll Eq</button></td>
+	<td>Character 2 <button type="button" onclick="rolleq(2); save()">Roll Eq</button></td>
+	<td>Character 3 <button type="button" onclick="rolleq(3); save()">Roll Eq</button></td>
 </tr>
 <tr>
 	<td class="cat">Character</td>

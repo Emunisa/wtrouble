@@ -141,16 +141,40 @@ function materia() {
 
 function save() {
 	localStorage.table = document.getElementById("EntireTable").innerHTML;
+
+	if (document.getElementById("indpEq").checked) {
+		localStorage.setItem("indpEq", true);
+	} else {
+		delete localStorage.indpEq;
+	}
+	
+	if (document.getElementById("noitem").checked) {
+		localStorage.setItem("noitem", true);
+	} else {
+		delete localStorage.noitem;
+	}
 }
 
 function load() {
 	if ('table' in localStorage) {
 		document.getElementById("EntireTable").innerHTML = localStorage.table;
 	}
+
+	if ('indpEq' in localStorage) {
+		document.getElementById("indpEq").checked = true;
+	}
+
+	if ('noitem' in localStorage) {
+		document.getElementById("noitem").checked = true;
+	}
 }
 
 function reset() {
 	delete localStorage.table;
+	delete localStorage.indpEq;
+	delete localStorage.noitem;
+	document.getElementById("indpEq").checked = false;
+	document.getElementById("noitem").checked = false;
 	// maybe we just force a refresh instead?
 	document.getElementById("EntireTable").innerHTML = `
 		<th colspan = 4>Results</th>
