@@ -58,9 +58,9 @@ function equipment() {
 		while (eq1 == eq2) {
 			eq2 = Math.floor(Math.random() * equipment.length);
 		}
-		document.getElementById("eqRes1").innerHTML = "<img src=assets/" + eqimage[eq1] + "> " + equipment[eq1] + ", <img src=assets/" + eqimage[eq2] + "> "  + equipment[eq2];
-		document.getElementById("eqRes2").innerHTML = "<img src=assets/" + eqimage[eq1] + "> " + equipment[eq1] + ", <img src=assets/" + eqimage[eq2] + "> "  + equipment[eq2];
-		document.getElementById("eqRes3").innerHTML = "<img src=assets/" + eqimage[eq1] + "> " + equipment[eq1] + ", <img src=assets/" + eqimage[eq2] + "> "  + equipment[eq2];
+		document.getElementById("eqRes1").innerHTML = "<img src=static/assets/" + eqimage[eq1] + "> " + equipment[eq1] + ", <img src=static/assets/" + eqimage[eq2] + "> "  + equipment[eq2];
+		document.getElementById("eqRes2").innerHTML = "<img src=static/assets/" + eqimage[eq1] + "> " + equipment[eq1] + ", <img src=static/assets/" + eqimage[eq2] + "> "  + equipment[eq2];
+		document.getElementById("eqRes3").innerHTML = "<img src=static/assets/" + eqimage[eq1] + "> " + equipment[eq1] + ", <img src=static/assets/" + eqimage[eq2] + "> "  + equipment[eq2];
 	}
 
 }
@@ -82,7 +82,7 @@ function rolleq(num) {
 		eq2 = Math.floor(Math.random() * equipment.length);
 		}
 
-		document.getElementById(`eqRes${num}`).innerHTML = "<img src=assets/" + eqimage[eq1] + "> " + equipment[eq1] + ", <img src=assets/" + eqimage[eq2] + "> "  + equipment[eq2];
+		document.getElementById(`eqRes${num}`).innerHTML = "<img src=static/assets/" + eqimage[eq1] + "> " + equipment[eq1] + ", <img src=static/assets/" + eqimage[eq2] + "> "  + equipment[eq2];
 		save();
 	}
 }
@@ -132,9 +132,9 @@ function materia() {
 		mat3 = Math.floor(Math.random() * materia.length);
 		}
 
-		document.getElementById("MateriaResult").innerHTML = "<img src=assets/" + materiaimage[mat1] + "> " + materia[mat1] + ", <img src=assets/" + materiaimage[mat2] + "> " + materia[mat2] + ", <img src=assets/" + materiaimage[mat3] + "> " + materia[mat3];
+		document.getElementById("MateriaResult").innerHTML = "<img src=static/assets/" + materiaimage[mat1] + "> " + materia[mat1] + ", <img src=static/assets/" + materiaimage[mat2] + "> " + materia[mat2] + ", <img src=static/assets/" + materiaimage[mat3] + "> " + materia[mat3];
 	} else {
-		document.getElementById("MateriaResult").innerHTML = "<img src=assets/" + materiaimage[mat1] + "> " + materia[mat1] + ", <img src=assets/" + materiaimage[mat2] + "> " + materia[mat2];
+		document.getElementById("MateriaResult").innerHTML = "<img src=static/assets/" + materiaimage[mat1] + "> " + materia[mat1] + ", <img src=static/assets/" + materiaimage[mat2] + "> " + materia[mat2];
 	}
 	save();
 }

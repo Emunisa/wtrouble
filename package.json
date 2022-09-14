@@ -1,0 +1,20 @@
+{
+  "name": "wtrouble",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Repository to hold web pages regarding an FF7 challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emunisa/wtrouble.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emunisa/wtrouble/issues"
+  },
+  "homepage": "https://github.com/emunisa/wtrouble#readme"
+}
