@@ -2,7 +2,7 @@ import fs from 'fs';
 
 export const vend = (path) => {
 	try {
-		let content = return fs.readFileSync('index.html', 'utf-8');
+		let content = fs.readFileSync(path, 'utf-8');
 		let contentType = getContentType(path);
 
 		return {
@@ -11,6 +11,8 @@ export const vend = (path) => {
             headers: { 'Content-Type': contentType }
         };
 	} catch (e) {
+		console.warn('encountered error loading static file');
+		console.warn(e.toString);
 		return null;
 	}
 
@@ -23,8 +25,10 @@ const extToTypeMap = {
 	'css': 'text/css'
 };
 
-const getContentType = (path) {
+const getContentType = (path) => {
 	let fileExtension = path.split(".")[1];
 
 	return extToTypeMap[fileExtension];
 }
+
+export default { vend };

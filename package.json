@@ -1,20 +1,30 @@
 {
-  "name": "wtrouble",
-  "type": "module",
-  "version": "1.0.0",
-  "description": "Repository to hold web pages regarding an FF7 challenge",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
+    "name": "wtrouble",
+    "type": "module",
+    "version": "1.0.0",
+    "description": "Repository to hold web pages regarding an FF7 challenge",
+    "main": "index.js",
+    "scripts": {
+        "cdk": "cdk",
+        "deploy": "cdk synth && cdk deploy",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
     "type": "git",
-    "url": "git+https://github.com/emunisa/wtrouble.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/emunisa/wtrouble/issues"
-  },
-  "homepage": "https://github.com/emunisa/wtrouble#readme"
+        "url": "git+https://github.com/emunisa/wtrouble.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/emunisa/wtrouble/issues"
+    },
+    "homepage": "https://github.com/emunisa/wtrouble#readme",
+    "devDependencies": {
+        "aws-cdk": "2.41.0",
+        "jest": "^27.5.1"
+    },
+    "dependencies": {
+        "aws-cdk-lib": "2.41.0",
+        "constructs": "^10.0.0"
+    }
 }
