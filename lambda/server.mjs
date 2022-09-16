@@ -7,10 +7,12 @@ export const handler = async (event, context) => {
         // load index.html if no file is specified
         if (event.path === '' || event.path === '/') {
             console.info('vending homepage');
-            return statics.vend('static/index.html');
+            let res = statics.vend('static/index.html');
+            console.info(`vending homepage with content ${res.body}`)
+            return res;
         }
 
-        const path = event.path.substring(1);
+        const path = event.path.substring(1).toLowerCase();
 
         // all static content under static path.  vend the associated file for these.
         if (path.startsWith('static/')) {

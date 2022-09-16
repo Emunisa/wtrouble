@@ -18,6 +18,5 @@ const routing = new WTroubleRoutingStack(app, 'w-trouble-routing', {
 
 const lambda = new WTroubleLambdaStack(app, 'w-trouble-lambda', {
     env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },
-    routing: routing,
-
+    routing: routing
 });

@@ -47,6 +47,7 @@ export default class WTroubleLambdaStack extends cdk.Stack {
             proxy: true,
             restApiName: `${id}-api`,
             description: `api gateway front for the ${id} wtrouble api`,
+            binaryMediaTypes: [ '*/* '],
             domainName: {
                 domainName: 'wtrouble-test.workbench.gg',
                 certificate: props.routing.certificate
@@ -54,14 +55,14 @@ export default class WTroubleLambdaStack extends cdk.Stack {
         });
 
         // throttle the endpoint to guard against DDOS and other load based attacks
-        const usagePlan = api.addUsagePlan(`${id}-api-plan`, {
-            throttle: {
-                rateLimit: 5,
-                burstLimit: 2
-            }
-        });
-        const usagePlanKey = api.addApiKey('${id}-api-plan-key');
-        usagePlan.addApiKey(usagePlanKey);
+        // const usagePlan = api.addUsagePlan(`${id}-api-plan`, {
+        //     throttle: {
+        //         rateLimit: 5,
+        //         burstLimit: 2
+        //     }
+        // });
+        // const usagePlanKey = api.addApiKey('${id}-api-plan-key');
+        // usagePlan.addApiKey(usagePlanKey);
 
         // the dns record that will actually resolve the url to the api gateway. there
         // might be some issue here with urls with 4 periods.  we don't do that

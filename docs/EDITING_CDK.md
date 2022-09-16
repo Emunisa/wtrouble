@@ -41,3 +41,6 @@ Here is the only two resons you would need to edit the CDK
      the subsequent prompts.
   1. wait.  once dkeka has updated the registrar your certificate should verify and the deploy should
      complete (you can see the deploy state in cloud formation, even if you have closed the CLI command).
+1. run `npm run deploy -- w-trouble-lambda` and wait for it to finish.
+1. validate your site at https://wtrouble-[YOUR GITHUB ALIAS].workbench.gg/
+1. now you can make a PR in github.

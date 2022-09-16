@@ -2,14 +2,13 @@ import fs from 'fs';
 
 export const vend = (path) => {
 	try {
-		let content = fs.readFileSync(path, 'utf-8');
+
+		let content = fs.readFileSync(path);
 		let contentType = getContentType(path);
 
-		return {
-            statusCode: 200,
-            body: content,
-            headers: { 'Content-Type': contentType }
-        };
+		console.info(contentType);
+		return typeToResponseMapperMap[contentType](content, contentType);
+
 	} catch (e) {
 		console.warn('encountered error loading static file');
 		console.warn(e.toString);
@@ -18,6 +17,11 @@ export const vend = (path) => {
 
 };
 
+export default { vend };
+
+/////
+// content type stuff
+/////
 const extToTypeMap = {
 	'html': 'text/html',
 	'png': 'image/png',
@@ -31,4 +35,38 @@ const getContentType = (path) => {
 	return extToTypeMap[fileExtension];
 }
 
-export default { vend };
+
+/////
+// mappers
+/////
+const mapTextToResponse = (content, contentType) => {
+	console.info('in mapTextToResponse');
+	return {
+		statusCode: 200,
+		body: content.toString('utf8'),
+		headers: { 'Content-Type': contentType }
+	}
+}
+mapTextToResponse.types = [ 'text/html', 'text/javascript', 'text/css' ];
+
+const mapImageToResponse = (content, contentType) => {
+	console.info('in mapImageToResponse');
+	return {
+		statusCode: 200,
+		body: content.toString('base64'),
+		isBase64Encoded: true,
+		headers: { 'Content-Type': contentType }
+	}
+}
+mapImageToResponse.types = [ 'image/png' ];
+
+/////
+// map the mapper map
+/////
+const typeToResponseMapperMap = { };
+for (let mapper of [ mapTextToResponse, mapImageToResponse ]) {
+	for (let type of mapper.types) {
+		console.info(`mapping ${type} to ${mapper.name}`);
+		typeToResponseMapperMap[type] = mapper;
+	}
+}
