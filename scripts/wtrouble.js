@@ -151,8 +151,10 @@ function materia() {
 }
 
 function save() {
-	localStorage.table = document.getElementById("EntireTable").innerHTML;
-
+	if(rolled) {
+		localStorage.table = document.getElementById("EntireTable").innerHTML;
+	}
+	
 	if (document.getElementById("indpEq").checked) {
 		localStorage.setItem("indpEq", true);
 	} else {
