@@ -1,3 +1,5 @@
+var rolled;
+
 function rollAttributes() {
 	characters();
 	equipment();
@@ -5,6 +7,7 @@ function rollAttributes() {
 	limit();
 	materia();
 	save();
+	rolled = true;
 }
 
 function characters() {
@@ -111,7 +114,15 @@ function limit() {
 	document.getElementById("LimitResult").innerHTML = limit[Math.floor(Math.random() * limit.length)];
 }
 
-function materia() {
+function materiamodeswap() {
+	if (rolled) {
+		materia();
+	} else {
+		alert("Enabling/Disabling Item Mode will affect materia options presented when rolling your W-Trouble run.");
+	}
+}
+
+function materia() {	
 	const materia = [
 	'Magic', 'Command', 'Summon', 'Support', 'Independent'
 	];
@@ -158,6 +169,7 @@ function save() {
 function load() {
 	if ('table' in localStorage) {
 		document.getElementById("EntireTable").innerHTML = localStorage.table;
+		rolled=true;
 	}
 
 	if ('indpEq' in localStorage) {
@@ -173,6 +185,7 @@ function reset() {
 	delete localStorage.table;
 	delete localStorage.indpEq;
 	delete localStorage.noitem;
+	rolled=false;
 	document.getElementById("indpEq").checked = false;
 	document.getElementById("noitem").checked = false;
 	// maybe we just force a refresh instead?
