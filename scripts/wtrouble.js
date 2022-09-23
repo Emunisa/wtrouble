@@ -176,6 +176,9 @@ function load() {
 	if ('table' in localStorage) {
 		document.getElementById("EntireTable").innerHTML = localStorage.table;
 		rolled=true;
+		if ('noitem' in localStorage) {
+			document.getElementById("matlabel").innerHTML = "Materia (No Item)";
+		}
 	}
 
 	if ('indpEq' in localStorage) {
@@ -184,10 +187,6 @@ function load() {
 
 	if ('noitem' in localStorage) {
 		document.getElementById("noitem").checked = true;
-	}
-
-	if (rolled=true && 'noitem' in localStorage) {
-		document.getElementById("matlabel").innerHTML = "Materia (No Item)";
 	}
 }
 
