@@ -146,8 +146,10 @@ function materia() {
 		}
 
 		document.getElementById("MateriaResult").innerHTML = "<img src=assets/" + materiaimage[mat1] + "> " + materia[mat1] + ", <img src=assets/" + materiaimage[mat2] + "> " + materia[mat2] + ", <img src=assets/" + materiaimage[mat3] + "> " + materia[mat3];
+		document.getElementById("matlabel").innerHTML = "Materia (No Item)";
 	} else {
 		document.getElementById("MateriaResult").innerHTML = "<img src=assets/" + materiaimage[mat1] + "> " + materia[mat1] + ", <img src=assets/" + materiaimage[mat2] + "> " + materia[mat2];
+		document.getElementById("matlabel").innerHTML = "Materia";
 	}
 	save();
 }
@@ -182,6 +184,10 @@ function load() {
 
 	if ('noitem' in localStorage) {
 		document.getElementById("noitem").checked = true;
+	}
+
+	if (rolled=true && 'noitem' in localStorage) {
+		document.getElementById("matlabel").innerHTML = "Materia (No Item)";
 	}
 }
 
