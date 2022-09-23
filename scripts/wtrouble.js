@@ -87,6 +87,8 @@ function rolleq(num) {
 
 		document.getElementById(`eqRes${num}`).innerHTML = "<img src=assets/" + eqimage[eq1] + "> " + equipment[eq1] + ", <img src=assets/" + eqimage[eq2] + "> "  + equipment[eq2];
 		save();
+	}else{
+		alert("Roll Eq will only roll equipment when using independent equipment mode");
 	}
 }
 
@@ -191,38 +193,37 @@ function reset() {
 	document.getElementById("indpEq").checked = false;
 	document.getElementById("noitem").checked = false;
 	// maybe we just force a refresh instead?
-	document.getElementById("EntireTable").innerHTML = `
-		<th colspan = 4>Results</th>
-		<tr class="tableheader">
-			<td>Category</td>
-			<td>Character 1 <button type="button" onclick="rolleq(1)">Roll Eq</button></td>
-			<td>Character 2 <button type="button" onclick="rolleq(2)">Roll Eq</button></td>
-			<td>Character 3 <button type="button" onclick="rolleq(3)">Roll Eq</button></td>
-		</tr>
-		<tr>
-			<td class="cat">Character</td>
-			<td id="charRes1"></td>
-			<td id="charRes2"></td>
-			<td id="charRes3"></td>
-		</tr>
-		<tr>
-			<td class="cat">Equipment</td>
-			<td id="eqRes1"></td>
-			<td id="eqRes2"></td>
-			<td id="eqRes3"></td>
-		</tr>
-		<tr>
-			<td class="cat">Materia</td>
-			<td colspan = 3 id="MateriaResult">
-		</tr>
-		<tr>
-			<td class="cat">Limit Tier</td>
-			<td colspan = 3 id="LimitResult">
-		</tr>
-		<tr>
-			<td class="cat">Event <button type="button" onclick="events()">Reroll</button></td>
-			<td colspan = 3 id="EventResult">
-		</tr>`;
+	document.getElementById("EntireTable").innerHTML = `<th colspan = 4>Results</th>
+	<tr class="tableheader">
+		<td>Category</td>
+		<td>Character 1 <button type="button" onclick="rolleq(1); save()" title="Rolls equipment when using independent equipment mode">Roll Eq</button></td>
+		<td>Character 2 <button type="button" onclick="rolleq(2); save()" title="Rolls equipment when using independent equipment mode">Roll Eq</button></td>
+		<td>Character 3 <button type="button" onclick="rolleq(3); save()" title="Rolls equipment when using independent equipment mode">Roll Eq</button></td>
+	</tr>
+	<tr>
+		<td class="cat">Character</td>
+		<td id="charRes1"></td>
+		<td id="charRes2"></td>
+		<td id="charRes3"></td>
+	</tr>
+	<tr>
+		<td class="cat">Equipment</td>
+		<td id="eqRes1"></td>
+		<td id="eqRes2"></td>
+		<td id="eqRes3"></td>
+	</tr>
+	<tr>
+		<td class="cat">Materia</td>
+		<td colspan = 3 id="MateriaResult">
+	</tr>
+	<tr>
+		<td class="cat">Limit Tier</td>
+		<td colspan = 3 id="LimitResult">
+	</tr>
+	<tr>
+		<td class="cat">Event <button type="button" onclick="events()">Reroll</button></td>
+		<td colspan = 3 id="EventResult">
+	</tr>`;
 }
 
 window.onload = () => load();
