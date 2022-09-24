@@ -176,9 +176,6 @@ function load() {
 	if ('table' in localStorage) {
 		document.getElementById("EntireTable").innerHTML = localStorage.table;
 		rolled=true;
-		if ('noitem' in localStorage) {
-			document.getElementById("matlabel").innerHTML = "Materia (No Item)";
-		}
 	}
 
 	if ('indpEq' in localStorage) {
