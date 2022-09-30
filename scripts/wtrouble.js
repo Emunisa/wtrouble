@@ -93,10 +93,15 @@ function limit() {
 }
 
 function materiamodeswap() {
+	if(document.getElementById("noitem").checked) {
+		alert("Enabling 'No Item' mode will grant you three materia options, allows you to use 1-1 limits, and enables the Barret Clause (see FAQ below).");
+		document.getElementById("matlabel").innerHTML = "Materia (No Item)";
+	} else {
+		document.getElementById("matlabel").innerHTML = "Materia";
+	}
+
 	if (rolled) {
 		materia();
-	} else {
-		alert("Enabling/Disabling Item Mode will affect materia options presented when rolling your W-Trouble run.");
 	}
 }
 
@@ -122,10 +127,8 @@ function materia() {
 		}
 
 		document.getElementById("MateriaResult").innerHTML = "<img src=assets/" + materiaimage[mat1] + "> " + materia[mat1] + ", <img src=assets/" + materiaimage[mat2] + "> " + materia[mat2] + ", <img src=assets/" + materiaimage[mat3] + "> " + materia[mat3];
-		document.getElementById("matlabel").innerHTML = "Materia (No Item)";
 	} else {
 		document.getElementById("MateriaResult").innerHTML = "<img src=assets/" + materiaimage[mat1] + "> " + materia[mat1] + ", <img src=assets/" + materiaimage[mat2] + "> " + materia[mat2];
-		document.getElementById("matlabel").innerHTML = "Materia";
 	}
 	save();
 }
@@ -150,6 +153,7 @@ function load() {
 
 	if ('noitem' in localStorage) {
 		document.getElementById("noitem").checked = true;
+		document.getElementById("matlabel").innerHTML = "Materia (No Item)";
 	}
 }
 
@@ -179,7 +183,7 @@ function reset() {
 		<td id="eqRes3"></td>
 	</tr>
 	<tr>
-		<td class="cat">Materia</td>
+		<td class="cat" id="matlabel">Materia</td>
 		<td colspan = 3 id="MateriaResult">
 	</tr>
 	<tr>
