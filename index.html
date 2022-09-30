@@ -8,8 +8,6 @@
 <body>
 <center>
 <h1>Welcome to the FF7 W-Trouble Challenge!</h1>
-<input type="checkbox" id="indpEq" onclick="save()">Do you want to roll equipment independently?</input>
-<br />
 <input type="checkbox" id="noitem" onclick="save(); materiamodeswap();">Enable 'No Item' mode (3 materia options rolled - will reroll materia)</input>
 <br />
 <br />
@@ -22,9 +20,9 @@
 <th colspan = 4>Results</th>
 <tr class="tableheader">
 	<td>Category</td>
-	<td>Character 1 <button type="button" onclick="rolleq(1); save()" title="Rolls equipment when using independent equipment mode">Roll Eq</button></td>
-	<td>Character 2 <button type="button" onclick="rolleq(2); save()" title="Rolls equipment when using independent equipment mode">Roll Eq</button></td>
-	<td>Character 3 <button type="button" onclick="rolleq(3); save()" title="Rolls equipment when using independent equipment mode">Roll Eq</button></td>
+	<td>Character 1 <button type="button" onclick="rolleq(1); save()" title="Rolls equipment for this character">Roll Eq</button></td>
+	<td>Character 2 <button type="button" onclick="rolleq(2); save()" title="Rolls equipment for this character">Roll Eq</button></td>
+	<td>Character 3 <button type="button" onclick="rolleq(3); save()" title="Rolls equipment for this character">Roll Eq</button></td>
 </tr>
 <tr>
 	<td class="cat">Character</td>

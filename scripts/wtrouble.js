@@ -2,12 +2,11 @@ var rolled;
 
 function rollAttributes() {
 	characters();
-	equipment();
 	events();
 	limit();
 	materia();
-	save();
 	rolled = true;
+	save();
 }
 
 function characters() {
@@ -45,31 +44,8 @@ function characters() {
 	}
 }
 
-function equipment() {
-	const equipment = [
-	'Weapon', 'Armor', 'Accessory'
-	];
-
-	const eqimage = [
-	'FFVII_Sword_Icon.PNG', 'FFVII_Armor_Icon.PNG', 'FFVII_Accessory_Icon.PNG'
-	];
-
-	if (document.getElementById("indpEq").checked){
-	} else {
-		var eq1 = Math.floor(Math.random() * equipment.length);
-		var eq2 = Math.floor(Math.random() * equipment.length);
-		while (eq1 == eq2) {
-			eq2 = Math.floor(Math.random() * equipment.length);
-		}
-		document.getElementById("eqRes1").innerHTML = "<img src=assets/" + eqimage[eq1] + "> " + equipment[eq1] + ", <img src=assets/" + eqimage[eq2] + "> "  + equipment[eq2];
-		document.getElementById("eqRes2").innerHTML = "<img src=assets/" + eqimage[eq1] + "> " + equipment[eq1] + ", <img src=assets/" + eqimage[eq2] + "> "  + equipment[eq2];
-		document.getElementById("eqRes3").innerHTML = "<img src=assets/" + eqimage[eq1] + "> " + equipment[eq1] + ", <img src=assets/" + eqimage[eq2] + "> "  + equipment[eq2];
-	}
-
-}
-
 function rolleq(num) {
-	if (document.getElementById("indpEq").checked){
+	if(rolled){
 		const equipment = [
 		'Weapon', 'Armor', 'Accessory'
 		];
@@ -87,8 +63,8 @@ function rolleq(num) {
 
 		document.getElementById(`eqRes${num}`).innerHTML = "<img src=assets/" + eqimage[eq1] + "> " + equipment[eq1] + ", <img src=assets/" + eqimage[eq2] + "> "  + equipment[eq2];
 		save();
-	}else{
-		alert("Roll Eq will only roll equipment when using independent equipment mode");
+	} else {
+		alert("Roll Eq will roll equipment once the run parameters have been rolled.")
 	}
 }
 
@@ -159,12 +135,6 @@ function save() {
 		localStorage.table = document.getElementById("EntireTable").innerHTML;
 	}
 	
-	if (document.getElementById("indpEq").checked) {
-		localStorage.setItem("indpEq", true);
-	} else {
-		delete localStorage.indpEq;
-	}
-	
 	if (document.getElementById("noitem").checked) {
 		localStorage.setItem("noitem", true);
 	} else {
@@ -178,10 +148,6 @@ function load() {
 		rolled=true;
 	}
 
-	if ('indpEq' in localStorage) {
-		document.getElementById("indpEq").checked = true;
-	}
-
 	if ('noitem' in localStorage) {
 		document.getElementById("noitem").checked = true;
 	}
@@ -189,10 +155,8 @@ function load() {
 
 function reset() {
 	delete localStorage.table;
-	delete localStorage.indpEq;
 	delete localStorage.noitem;
 	rolled=false;
-	document.getElementById("indpEq").checked = false;
 	document.getElementById("noitem").checked = false;
 	// maybe we just force a refresh instead?
 	document.getElementById("EntireTable").innerHTML = `<th colspan = 4>Results</th>
