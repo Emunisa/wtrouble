@@ -116,7 +116,7 @@ function materia() {
 	var mat1 = Math.floor(Math.random() * materia.length);
 	var mat2 = Math.floor(Math.random() * materia.length);
 
-	while (mat1 == mat2) {
+	while (mat1 == mat2 || mat1 + mat2 == 7) {
 		mat2 = Math.floor(Math.random() * materia.length);
 	}
 	if (document.getElementById("noitem").checked){
