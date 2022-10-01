@@ -11,7 +11,7 @@ function rollAttributes() {
 
 function characters() {
 	const characters = [
-	'Aerith', 'Tifa', 'Barret', 'Yuffie', 'Vincent', 'Cid', 'Cait Sith'
+	'Aerith', 'Tifa', 'Barret', 'Yuffie', 'Vincent', 'Cid', 'Cait Sith', 'Red XIII'
 	];
 
 	var char2 = Math.floor(Math.random() * characters.length);
