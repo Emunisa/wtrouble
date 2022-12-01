@@ -94,7 +94,7 @@ function limit() {
 
 function materiamodeswap() {
 	if(document.getElementById("noitem").checked) {
-		alert("Enabling 'No Item' mode will grant you three materia options, allows you to use 1-1 limits, and enables the Barret Clause (see FAQ below).");
+		alert("Enabling 'No Item' mode will grant you three materia options, allows you to use 1-1 limits, and enables the Barret Clause (see FAQ below). Items can still be used outside of battle.");
 		document.getElementById("matlabel").innerHTML = "Materia (No Item)";
 	} else {
 		document.getElementById("matlabel").innerHTML = "Materia";
