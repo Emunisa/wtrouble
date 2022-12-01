@@ -8,13 +8,27 @@
 <body>
 <center>
 <h1>Welcome to the FF7 W-Trouble Challenge!</h1>
-<input type="checkbox" id="noitem" onclick="save(); materiamodeswap();">Enable 'No Item' mode (3 materia options rolled - will reroll materia)</input>
+<input type="checkbox" id="noitem" onclick="save(); materiamodeswap();">Enable 'No Item' mode (3 materia options rolled - will reroll materia)</input> <button id="noitm" onclick="displaymodal()">What is No Item?</button>
 <br />
 <br />
 <button type="button" onclick="rollAttributes()">Click me to roll!</button>
 <button type="button" onclick="reset()">Reset</button>
 <br />
 <br />
+
+<div id="noitmmodal" class="modal">
+
+<!-- Modal content -->
+	<div class="modal-content">
+		<div class="modal-header">
+			<span class="close" onclick="closemodal()">&times;</span>
+			<h2>What is No Item Mode?</h2>
+		</div>
+		<div class="modal-body">
+			<p>No Item Mode will prohibit the usage of items within battle. However, you will be granted three materia options, be allowed to use 1-1 limits, and allows for Barret to act as Cloud for the purposes of the mandatory Dyne fight that occurs during the end of Coral Prison (only if you did not roll Barret as a character).</p>
+		</div>
+	</div>
+</div>
 
 <table id="EntireTable">
 <th colspan = 4>Results</th>
@@ -70,7 +84,6 @@
 		<br />
 		<li>Specify two materia classes; only materia from those two classes can be used during the playthrough.</li>
 		<br />
-		<li><b><i>Barret Clause (No Items Only): </i></b>If you do not roll Barret, he is able to act as Cloud for the purposes of the mandatory Dyne fight that occurs during the end of Coral Prison.</li>
 	</ol>
 </div>
 
@@ -81,4 +94,21 @@
 Website hosted by dkeka#0504 and maintained by Emunisa#7777
 </footer>
 </body>
+<script>
+	var modal = document.getElementById("noitmmodal");
+
+	function displaymodal() {
+		modal.style.display = "block";
+	}
+
+	function closemodal() {
+		modal.style.display = "none";
+	}
+
+	window.onclick = function(event) {
+	if (event.target == modal) {
+		modal.style.display = "none";
+	}
+	}
+</script>
 </html>
